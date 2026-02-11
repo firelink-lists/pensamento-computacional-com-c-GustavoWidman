@@ -15,14 +15,20 @@ using namespace std;
 int main() {
     int pares = 0;
     int impares = 0;
-    
+
     // TODO: Percorra números de 1 a 50
-    
-    // TODO: Conte pares e ímpares
-    
+    for (int i = 1; i <= 50; i++) {
+        // TODO: Conte pares e ímpares
+        if (i % 2 == 0) {
+            pares++;
+        } else {
+            impares++;
+        }
+    }
+
     // TODO: Exiba os resultados
     cout << "Pares: " << pares << endl;
     cout << "Ímpares: " << impares << endl;
-    
+
     return 0;
 }
