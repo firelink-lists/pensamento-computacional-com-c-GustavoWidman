@@ -18,21 +18,39 @@ using namespace std;
 
 template<typename T>
 void trocar(T& a, T& b) {
-    // Implemente a troca
+    T temp = a;
+    a = b;
+    b = temp;
+}
+
+template<typename T>
+void run(T val1, T val2) {
+    // TODO: Crie shared_ptr para int
+    auto ptr1 = make_shared<T>(val1);
+    auto ptr2 = make_shared<T>(val2);
+
+    // TODO: Exiba valores antes da troca
+    cout << "Antes: " << *ptr1 << " " << *ptr2 << endl;
+
+    // TODO: Troque os valores
+    trocar(*ptr1, *ptr2);
+
+    // TODO: Exiba valores depois da troca
+    cout << "Depois: " << *ptr1 << " " << *ptr2 << endl;
+
+    // TODO: Mostre contagem de referências
+    cout << "Refs: " << ptr1.use_count() << " " << ptr2.use_count() << endl;
 }
 
 int main() {
-    // TODO: Crie shared_ptr para int
-    
-    // TODO: Crie shared_ptr para double
-    
-    // TODO: Exiba valores antes da troca
-    
-    // TODO: Troque os valores
-    
-    // TODO: Exiba valores depois da troca
-    
-    // TODO: Mostre contagem de referências
-    
+    double val1, val2;
+    cin >> val1 >> val2;
+
+    if (val1 == (int)val1 && val2 == (int)val2) {
+        run((int)val1, (int)val2);
+    } else {
+        run(val1, val2);
+    }
+
     return 0;
 }
